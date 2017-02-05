@@ -87,11 +87,10 @@ public class Lista <U extends Comparable> implements Comparable{
      * así intercambiar el de menor valor entre esos dos que compara. Llama al método Swapp que se encarga 
      * de tomar los valores que tienen (sin cambiar los nodos de referencia) y así ordenar los n valores. 
      */
-    public void BubbleSort()
-     
+    public void BubbleSort() 
     {
     	int i=0;	
-    	while (i<count){
+    	while (i<count){ 
     		
     		Nodo NodoActual= Cabeza; 
     		Nodo NodoSiguiente = NodoActual.getSiguiente(); 
@@ -102,9 +101,8 @@ public class Lista <U extends Comparable> implements Comparable{
     			NodoActual =NodoSiguiente; 
     			NodoSiguiente=NodoSiguiente.getSiguiente(); 		
     		}	
-    	}
-    	
-    }//
+    	}   	
+    }
     
     public void SelectionSort(){
     	int i=0;
