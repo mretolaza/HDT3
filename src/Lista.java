@@ -3,7 +3,10 @@ import java.util.Set;
 import java.lang.Object;
 /**
  *
- * @author MaríaMercedesRetolazaReyna 
+ * @author María Mercedes Retolaza Reyna, 16339  
+ * @author Gadhi Rodriguez, 16206
+ * @author Javier Ramos, 16230
+ * @author Diego Fernandez, 16344
  */
 public class Lista <U extends Comparable> implements Comparable{
     
@@ -78,6 +81,12 @@ public class Lista <U extends Comparable> implements Comparable{
     
     //Bubble Sort con nodos 
     
+    /**
+     * El sort de burbuja recibe la cantidad de n valores y los ordena mediante un método llamado 
+     * swap. Se recibe la cabeza como primer valor de referencia y luego se apunta el siguiente para 
+     * así intercambiar el de menor valor entre esos dos que compara. Llama al método Swapp que se encarga 
+     * de tomar los valores que tienen (sin cambiar los nodos de referencia) y así ordenar los n valores. 
+     */
     public void BubbleSort()
      
     {
@@ -122,6 +131,12 @@ public class Lista <U extends Comparable> implements Comparable{
     	
     }
     
+    /** Este método recibe dos parametros, el "actual" y el "Siguiente" este se encarga de recibir los valores 
+     * sin cambiar la referencia y así ordenarlos hadta terminar la lista. Internamente tiene una variable temporal 
+     * que se encarga de guardar el siguiente valor para así no perder ningun dato mediante se realiza el cambio 
+     * @param actual
+     * @param siguiente
+     */
     public void Swapp(Nodo actual, Nodo siguiente){
     	Comparable Temporal = actual.getValor(); 
     	actual.setValor(siguiente.getValor());
