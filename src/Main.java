@@ -17,8 +17,25 @@ public class Main {
 	 */
 	public static void main(String[] args) throws IOException{
 
-	Lista c = new Lista();
-	BufferedReader br = new BufferedReader(new FileReader("datos.txt"));
-	//System.out.println(a);
+		String cadena;
+		Lista numeros;
+		
+		numeros = new Lista();
+		int n = 0;
+		int min = 0;
+
+		//Se lee el archivo numeros.txt
+		FileReader lecT = new FileReader(System.getProperty("user.dir") + "/numeros.txt");
+		BufferedReader buff = new BufferedReader(lecT);
+		
+		while((cadena = buff.readLine())!=null) {
+    		numeros.AgregarNodo(cadena);
+		}
+		
+		//Impresion con quickSort
+		numeros.quickSort();
+		System.out.println(numeros.toString());
+
+        
 	}
 }

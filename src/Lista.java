@@ -73,6 +73,22 @@ public class Lista <U extends Comparable> implements Comparable{
         return sb.toString();
 
     }
+    
+    public int length(){
+    	Nodo NodoActual = Cabeza;
+    	int i = 1;
+    	
+        if (NodoActual == null)
+            return (Integer) null;
+        
+        while (NodoActual.getSiguiente() !=  null)
+        {
+            NodoActual = NodoActual.getSiguiente();
+            i++;
+        }
+        return i;
+        
+    }
 
     @Override
     public int compareTo(Object t) {
@@ -140,6 +156,111 @@ public class Lista <U extends Comparable> implements Comparable{
     	actual.setValor(siguiente.getValor());
     	siguiente.setValor(Temporal);
     }
+    
+    
+    /**
+     * Metodos para el QuickSort
+     * 
+     * Conjunto de metodos los cuales dividen la lista en diferentes particiones, y por medio de un pivote
+     * se va comparando los numeros, poniendo los menores de un lado y los mayores del otro. Este proceso se
+     * repite hasta que la lista esta ordenda.
+     * 
+     * Codigo de referencia por Duane A. Bailey 
+     * 
+     */
+    
+    public void quickSort(){
+    	Comparable[] comparable = DinToNorm();
+    	qs(comparable, 0, comparable.length - 1);
+    	NormToDin(comparable);
+    	
+    }
+    
+    
+    private void qs (Comparable[] data, int minimo, int maximo)
+    {
+       int pivote;
+
+       if (minimo < maximo)
+       {
+    	  pivote = partition (data, minimo, maximo);
+          qs(data, minimo, pivote - 1);  
+          qs(data, pivote + 1, maximo); 
+       }
+       
+    }
+	   
+	private static int partition (Comparable[] data, int minimo, int maximo)
+	   {
+	      
+	      Comparable partitionValue = data[minimo];
+
+	      int izq = minimo;
+	      int der = maximo;
+
+	      while (izq < der)
+	      {
+	         while (data[izq].compareTo(partitionValue) <= 0 && izq < der)
+	        	 izq++;
+	         
+	         while (data[der].compareTo(partitionValue) > 0)
+	        	 der--;
+
+	         if (izq < der)
+	            swap(data, izq, der);
+	      }
+
+	      swap (data, minimo, der);
+
+	      return der;
+	   }
+	   
+	   
+	private Comparable[] DinToNorm(){
+	    	
+	    	Comparable[] listaComp = new Comparable[length()];
+	    	int size = length();
+	    	int i = 0;
+	    	
+	        while (i < size) {
+	        	
+	        	if (Cabeza == null)
+	        		Cabeza = Cabeza.getSiguiente();
+	        	
+	        	listaComp[i] = ObtenerCabeza().getValor();
+	        	try {
+	        		
+	        		Cabeza = Cabeza.getSiguiente();
+	        		
+	        	}catch(Exception e){
+	        		
+	        	}
+	        	i++;
+	            
+	        }
+	        
+	        return listaComp;
+	    	
+	    }
+	public void NormToDin(Comparable[] comparable){
+    	
+    	int size = comparable.length;
+    	int i = 0;
+    	
+        while (i < size) {
+        	AgregarNodo((U) comparable[i]);
+        	i++;
+            
+        }
+        Cabeza = Cabeza.getSiguiente();
+    	
+    }
+	
+	private static void swap (Comparable[] data, int index1, int index2) {
+	       Comparable temp = data[index1];
+	       data[index1] = data[index2];
+	       data[index2] = temp;
+	}
     
     
 }
