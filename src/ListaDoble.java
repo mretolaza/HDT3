@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 /**
  *
- * @author OscarIvan
+ * @author María Mercedes Retolaza Reyna, 16339  
+ * @author Gadhi Rodriguez, 16206
+ * @author Javier Ramos, 16230
+ * @author Diego Fernandez, 16344
  */
 public class ListaDoble <V extends Comparable<V>>
 {

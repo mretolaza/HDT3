@@ -1,17 +1,14 @@
-//********************************************************************
-//  Sorting.java       Author: Lewis/Loftus
-//
-//  Demonstrates the selection sort and insertion sort algorithms.
-//********************************************************************
-
-
+/**
+ *
+ * @author María Mercedes Retolaza Reyna, 16339  
+ * @author Gadhi Rodriguez, 16206
+ * @author Javier Ramos, 16230
+ * @author Diego Fernandez, 16344
+ */
 
 public class Sorting<K extends Comparable<K>>
 {
-   //-----------------------------------------------------------------
-   //  Sorts the specified array of objects using the selection
-   //  sort algorithm.
-   //-----------------------------------------------------------------
+
    public void selectionSort (ListaDoble<K> list)
    {
 	   NodoDoble<K> nodoActual = list.ObtenerCabeza();
