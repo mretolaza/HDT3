@@ -16,6 +16,8 @@ public class Main {
 	 * recibe el archivo de texto y lo muestra en la consola 
 	 */
 	public static void main(String[] args) throws IOException{
+		
+		long startTime = System.currentTimeMillis();
 
 		String cadena;
 		Lista numeros;
@@ -35,6 +37,10 @@ public class Main {
 		//Impresion con quickSort
 		numeros.quickSort();
 		System.out.println(numeros.toString());
+		
+		long endTime   = System.currentTimeMillis();
+		long totalTime = endTime - startTime;
+		System.out.println(totalTime);
 
         
 	}
