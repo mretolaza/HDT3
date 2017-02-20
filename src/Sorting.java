@@ -9,6 +9,9 @@
 public class Sorting<K extends Comparable<K>>
 {
 
+	/**
+	* Metodo que realiza un selection sort
+	*/
    public void selectionSort (ListaDoble<K> list)
    {
 	   NodoDoble<K> nodoActual = list.ObtenerCabeza();
@@ -37,7 +40,9 @@ public class Sorting<K extends Comparable<K>>
 		   
 	   }
    }
-   
+   /**
+   * Metodo que realiza un insertion sort
+   */
    public void insertionSort (ListaDoble<K> lista)
    {
 	   NodoDoble<K> NodoActual = lista.ObtenerCabeza();
@@ -55,6 +60,9 @@ public class Sorting<K extends Comparable<K>>
 	   }
    }
    
+   /**
+   * Metodo para realizar un Merge sort con una lista dinamica
+   */
    public void dynamikMerge(ListaDoble<K> lista){
 	   
 	   Comparable[] data = new Comparable[lista.Length()];
@@ -77,7 +85,9 @@ public class Sorting<K extends Comparable<K>>
 	   }
 	   
    }
-   
+   /**
+   * Metodo que realiza un sort en una lista estatica
+   */
    public void mergeSort(Comparable[] data, int min, int max){
 	   
 	   if (min < max)
@@ -90,7 +100,9 @@ public class Sorting<K extends Comparable<K>>
 
 	   
    }
-   
+   /**
+   * Metodo que une las fracciones de una lista para realizar el Merge Sort
+   */
    public void merge(Comparable[] data, int first, int mid, int last){
 	   
 	   Comparable[] temp = new Comparable[data.length];
